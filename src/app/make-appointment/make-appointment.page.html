@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-button width="100%" class="back" fill="clear" routerLink="/home">
+        <ion-icon name="chevron-back"></ion-icon> <ion-title> </ion-title> 
+        <ion-item></ion-item>
+        <b>  <ion-item style="text-align: center;">Add an item to list</ion-item></b>
+      
+      </ion-button>
+    
+  
+     
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+    <b><ion-text style="font-size: 14px; margin-left: 10px; margin-top: 10px;">Name</ion-text></b> 
+      <ion-input class="name" label-placement="floating" fill="outline" placeholder="Fullname" formControlName="name"
+        type="text" required style="margin-bottom: 10px;"></ion-input>
+
+     <b><ion-text style="font-size: 14px; margin-left: 10px">Email Address</ion-text></b> 
+      <ion-input class="email" label-placement="floating" fill="outline" placeholder="username@email.com"
+        formControlName="email" type="text" required style="margin-bottom: 10px;">
+      </ion-input>
+
+      <b><ion-text style="font-size: 14px; margin-left: 10px">Details</ion-text></b>
+      <ion-input class="details" label-placement="floating" fill="outline" placeholder="Tell us everything"
+        formControlName="mobile" type="text">
+      </ion-input>
+        
+      
+    </form>
+  </ion-list>
+</ion-content>
+
+
+<form [formGroup]="bookingForm" (ngSubmit)="formSubmit()"> 
+
+
+  <ion-row>
+    <ion-col>
+      <ion-button class="update"type="submit" color="primary"  expand="block">
+        <ion-icon style="text-align: left;" name="add"></ion-icon>Add</ion-button>
+    </ion-col>
+  </ion-row>
+
+
+
+
+</form>

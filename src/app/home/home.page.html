@@ -1,0 +1,41 @@
+
+
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar style="--border-radius: 15px;" class="searchbar" [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+  </ion-toolbar>
+
+<ion-content>
+<div>
+  <ion-list>
+
+    
+    <ion-item ion-button *ngFor="let booking of searchBooking" class="user-list" clear [routerLink]="['/view-appointment/', booking.$key]" routerLinkActive="router-link-active" >
+
+      <ion-avatar slot="start">
+        <img width="" height="" alt="dot" label="dot" class="dot"src="/assets/icon.png" />
+      </ion-avatar>
+      <ion-label clear >
+        <b> <h5 style="font-size: 12px; line-height: 14.52px; font: inter; font-weight: 700; font-family: 'Inter';" >
+
+          {{booking.name}}
+        </h5></b>
+        <p >
+          {{booking.email}}
+        </p>
+      </ion-label>
+     
+    </ion-item>
+  
+  </ion-list>
+</div></ion-content>
+<ion-header>
+  <ion-content>
+   
+  <ion-button     routerLinkActive="tab-selected" routerLink="/make-appointment" class="ios" tab="make-appointment" >
+   <ion-icon name="add"></ion-icon> Add 
+  </ion-button>
+  </ion-content>
+  </ion-header>

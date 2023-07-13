@@ -1,0 +1,69 @@
+
+
+
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-title>
+      <ion-button width="100%" class="back" fill="clear" routerLink="/home">
+        <ion-icon name="chevron-back"></ion-icon> <ion-title> </ion-title> 
+
+        <b>  <ion-item style="text-align: center;"></ion-item></b>
+      
+      </ion-button>
+    
+  
+     
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-toolbar>
+ 
+    
+    <ion-list  *ngFor="let booking of Bookings" class="user-list"  >
+
+   
+      <ion-list style="height: px; width:350px; top: 94px; left: 24px; gap: 8px;">
+        <h5 style="font-size: 24px; font-family: 'Inter';">
+
+          <b>{{booking.name}}</b>
+        </h5>
+        <p >
+          {{booking.email}}
+        </p>
+
+        <p class="ion-text-justify"style="width: 330px; display: flex; justify-items: flex-start;" >{{booking.mobile}}</p>
+      </ion-list>
+
+
+      
+    </ion-list>
+  
+  </ion-toolbar>
+
+
+ 
+</ion-content>
+
+
+   <ion-content>
+ 
+<ion-content *ngFor="let booking of Bookings" class="user-list"  >
+
+
+
+      <ion-button name="create-outline" class="update" [routerLink]="['/edit-appointment/', booking.$key]">
+        <ion-icon name="create-outline"></ion-icon>Edit Information</ion-button>
+        
+      <ion-button name="remove" class="remove" color="danger" expand="block" fill="outline" clear (click)="deleteBooking(booking.$key)">
+        <ion-icon name="remove" color="danger"></ion-icon> Delete Item</ion-button>
+
+
+
+
+  </ion-content>
+
+   </ion-content>
+  
